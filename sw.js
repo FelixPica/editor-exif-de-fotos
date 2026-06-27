@@ -1,12 +1,12 @@
 const CACHE_NAME = 'photo-metadata-editor-v1';
 const ASSETS = [
-  "/",
-  "/index.html",
-  "/manifest.json",
-  "/icon.svg",
-  "/icon-512.jpg",
-  "/assets/index-CmQFXsEc.css",
-  "/assets/index-Cw_ONEbL.js"
+  "./",
+  "index.html",
+  "manifest.json",
+  "icon.svg",
+  "icon-512.jpg",
+  "assets/index-Bl7ZMYYY.js",
+  "assets/index-CmQFXsEc.css"
 ];
 
 self.addEventListener('install', (event) => {
@@ -42,7 +42,7 @@ self.addEventListener('fetch', (event) => {
   
   // Handle same-origin assets (the app's built pages, JS, CSS, icons, etc.)
   if (url.origin === self.location.origin) {
-    const isShellFile = url.pathname === '/' || url.pathname === '/index.html' || url.pathname === '/manifest.json';
+    const isShellFile = url.pathname.endsWith('/') || url.pathname.endsWith('/index.html') || url.pathname.endsWith('/manifest.json');
     
     if (isShellFile) {
       // 1. Network-First Strategy for mutable shell files
