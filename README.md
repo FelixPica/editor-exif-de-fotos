@@ -1,0 +1,1 @@
+# editor-exif-de-fotos
